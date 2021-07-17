@@ -11,11 +11,10 @@ exports.handler = async (event) => {
     })
       .then((response) => response.json())
       .then((res) => res[0])
-
       .catch((error) => error);
   }
   const response = await fetch(
-    `https://api.unsplash.com/search/photos?query=${query || randomWord}`,
+    `https://api.unsplash.com/search/photos?query=${randomWord}`,
     {
       method: "GET",
       headers: {
