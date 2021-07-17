@@ -3,16 +3,18 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const { query } = qs.parse(event.body);
+  let randomWord = query;
   if (!query) {
     const randomLink = `https://random-word-api.herokuapp.com//word?number=1`;
     const randomWord = await fetch(randomLink, {
       method: "GET",
     })
       .then((response) => response.json())
-      .catch((error) => console.error(error));
+      .then((res) => response.json())
+      .catch((error) => res[0]);
   }
   const response = await fetch(
-    `https://api.unsplash.com/search/photos?query=${query || randomWord[0]}`,
+    `https://api.unsplash.com/search/photos?query=${query || randomWord}`,
     {
       method: "GET",
       headers: {
