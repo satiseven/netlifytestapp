@@ -1,0 +1,11 @@
+{
+  "name": "netlifytesst",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index"
+  },
+  "main": "index.js",
+  "repository": "git@github.com:satiseven/netlifytestapp.git",
+  "author": "satiseven <satiseven777@gmail.com>",
+  "license": "MIT"
+}
