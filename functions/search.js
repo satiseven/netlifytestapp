@@ -10,8 +10,8 @@ exports.handler = async (event) => {
       method: "GET",
     })
       .then((response) => response.json())
-      .then((res) => response.json())
-      .catch((error) => res[0]);
+      .then((res) => res[0])
+      .catch((error) => error);
   }
   const response = await fetch(
     `https://api.unsplash.com/search/photos?query=${query || randomWord}`,
