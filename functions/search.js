@@ -6,7 +6,7 @@ exports.handler = async (event) => {
   let randomWord = query;
   if (!query) {
     const randomLink = `https://random-word-api.herokuapp.com/word?number=1`;
-    const randomWord = await fetch(randomLink, {
+    randomWord = await fetch(randomLink, {
       method: "GET",
     })
       .then((response) => response.json())
