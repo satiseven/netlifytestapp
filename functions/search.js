@@ -11,7 +11,7 @@ exports.handler = async (event) => {
     })
       .then((response) => response.json())
       .then((res) => res[0])
-      .then((main) => console.log(main))
+
       .catch((error) => error);
   }
   const response = await fetch(
