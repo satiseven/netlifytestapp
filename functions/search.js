@@ -25,11 +25,8 @@ exports.handler = async (event) => {
       "Content-Type": "text/html",
     },
     body: JSON.stringify(response),
-    body: `
-    ${response.results.map((firstResult) => (
+    body: response.results.map((firstResult) => (
       <img src={firstResult.urls.regular} alt={firstResult.alt_description} />
-    ))}
-      
-     `,
+    )),
   };
 };
