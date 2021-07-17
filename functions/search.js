@@ -16,8 +16,6 @@ exports.handler = async (event) => {
     .then((response) => response.json())
     .catch((error) => console.error(error));
 
-  const firstResult = response.results[0];
-
   return {
     statusCode: 200,
     headers: {
