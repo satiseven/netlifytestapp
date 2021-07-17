@@ -26,10 +26,10 @@ exports.handler = async (event) => {
     },
     body: JSON.stringify(response),
     body: `
-       <img
-         src="${firstResult.urls.regular}"
-         alt="${firstResult.alt_description}"
-       />
+    ${response.results.map((firstResult) => (
+      <img src={firstResult.urls.regular} alt={firstResult.alt_description} />
+    ))}
+      
      `,
   };
 };
