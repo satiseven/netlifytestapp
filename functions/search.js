@@ -5,12 +5,13 @@ exports.handler = async (event) => {
   const { query } = qs.parse(event.body);
   let randomWord = query;
   if (!query) {
-    const randomLink = `https://random-word-api.herokuapp.com//word?number=1`;
+    const randomLink = `https://random-word-api.herokuapp.com/word?number=1`;
     const randomWord = await fetch(randomLink, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((res) => res[0])
+      .then((main) => console.log(main))
       .catch((error) => error);
   }
   const response = await fetch(
